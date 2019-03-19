@@ -9,17 +9,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class LoginController extends Controller
 {
-    /**
-     * @Route("/login", name="login")
-     */
     public function login(Request $request, AuthenticationUtils $utils)
     {
         $error = $utils->getLastAuthenticationError();
         $lastUsername = $utils->getLastUsername();
-
-        return $this->render('security/login.html.twig', [
-            'username' => $lastUsername,
-            'error'         => $error
-        ]);
+        return $this->render('login.html.twig', [ 'username' => $lastUsername, 'error'         => $error]);
     }
 }
