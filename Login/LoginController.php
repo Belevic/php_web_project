@@ -1,6 +1,6 @@
 <?php
 
-namespace App\login;
+namespace App\Security;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -13,6 +13,6 @@ class LoginController extends Controller
     {
         $error = $utils->getLastAuthenticationError();
         $lastUsername = $utils->getLastUsername();
-        return $this->render('login.html.twig', [ 'username' => $lastUsername, 'error'         => $error]);
+        return $this->render('login.html.twig', [ 'username' => $lastUsername, 'error' => $error]);
     }
 }
